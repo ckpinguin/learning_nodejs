@@ -1,0 +1,50 @@
+{
+  "name": "voteapp-REST-server",
+  "version": "1.0.0",
+  "description": "REST Server for the ReactJS voteapp learning example",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ckpinguin/voteapp-rest-server"
+  },
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "USE_MONGODB=true nodemon index.js",
+    "start:prod": "NODE_ENV=production USE_MONGODB=true node index.js",
+    "import-mongodb-data:local": "mongoimport --db vote-db --collection votemodels ./db/mongodb-votes.json",
+    "import-mongodb-data:remote": "mongoimport -h REMOTESERVER -u user -p password -d DBName --collection votemodels ./db/mongodb-votes.json"
+  },
+  "author": "Christof Kälin",
+  "license": "MIT",
+  "engines": {
+    "node": "6.9.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.4.0",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-react": "^1.0.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-3": "^6.17.0",
+    "eslint": "^3.14.0",
+    "eslint-loader": "^1.6.1",
+    "eslint-plugin-react": "^6.9.0"
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-preset-stage-3": "^6.22.0",
+    "babel-register": "^6.4.3",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "inert": "^4.1.0",
+    "mongoose": "^4.3.6",
+    "multer": "^1.2.1",
+    "pg": "^6.1.2",
+    "pg-hstore": "^2.3.2",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "sequelize": "^3.29.0"
+  }
+}
